@@ -4,7 +4,6 @@ var temp = [[], [], [], [], [], [], [], [], []]
 for (var i = 0; i < 9; i++) {
     for (var j = 0; j < 9; j++) {
         arr[i][j] = document.getElementById(i * 9 + j);
-
     }
 }
 
@@ -13,7 +12,6 @@ function initializeTemp(temp) {
     for (var i = 0; i < 9; i++) {
         for (var j = 0; j < 9; j++) {
             temp[i][j] = false;
-
         }
     }
 }
@@ -26,7 +24,6 @@ function setTemp(board, temp) {
             if (board[i][j] != 0) {
                 temp[i][j] = true;
             }
-
         }
     }
 }
@@ -39,7 +36,6 @@ function setColor(temp) {
             if (temp[i][j] == true) {
                 arr[i][j].style.color = "#DC3545";
             }
-
         }
     }
 }
@@ -48,10 +44,7 @@ function resetColor() {
 
     for (var i = 0; i < 9; i++) {
         for (var j = 0; j < 9; j++) {
-
             arr[i][j].style.color = "green";
-
-
         }
     }
 }
@@ -96,7 +89,7 @@ button.onclick = function () {
     xhrRequest.send()
 }
 
-//to be completed by student
+//Check possibility 
 function isPossible(board, sr, sc, val) {
     for (var row = 0; row < 9; row++) {
         if (board[row][sc] == val) {
@@ -124,7 +117,7 @@ function isPossible(board, sr, sc, val) {
 
 }
 
-//to be completed by student
+//Recursive function to solve sudoku
 function solveSudokuHelper(board, sr, sc) {
     if (sr == 9) {
         changeBoard(board);
@@ -155,5 +148,4 @@ function solveSudoku(board) {
 
 solve.onclick = function () {
     solveSudoku(board)
-
 }
